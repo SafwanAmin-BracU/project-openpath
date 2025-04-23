@@ -2,10 +2,15 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+:root {
+  --color-primary: #0fa286;
+  --color-secondary: #182234;
+}
 body {
-	@apply flex h-[100dvh] w-[100dvw] box-border p-0 m-0 flex-col;
-	@apply bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-200;
-	@apply transition-colors duration-300 ease-in-out;
-	@apply font-sans text-base;
-	@apply antialiased;
+  @apply flex h-[100dvh] w-[100dvw] box-border p-0 m-0 flex-col;
+  @apply bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-200;
+  @apply transition-colors duration-300 ease-in-out;
+  @apply font-sans text-base;
+  @apply antialiased;
+  background-color: var(--color-secondary);
 }

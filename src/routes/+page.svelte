@@ -1,18 +1,19 @@
 <script lang="ts">
+  import Icon from "@iconify/svelte";
   // Left column features
   const features = [
     {
-      icon: "icon-[mdi--source-branch]",
+      icon: "mdi:source-branch",
       title: "Find Your Project",
       description: "Matched to your skills & interests",
     },
     {
-      icon: "icon-[mdi--account-group]",
+      icon: "mdi:account-group",
       title: "Join Communities",
       description: "Connect with mentors & peers",
     },
     {
-      icon: "icon-[mdi--rocket-launch]",
+      icon: "mdi:rocket-launch",
       title: "Build Your Portfolio",
       description: "Showcase real-world experience",
     },
@@ -21,17 +22,17 @@
   // Right column benefits
   const benefits = [
     {
-      icon: "icon-[mdi--earth]",
+      icon: "mdi:earth",
       title: "Skill-Based Matching",
       description: "Our AI analyzes your skills and recommends projects where you can make meaningful contributions.",
     },
     {
-      icon: "icon-[mdi--code-tags]",
+      icon: "mdi:code-tags",
       title: "Beginner-Friendly Options",
       description: "Filter for projects with good documentation, mentorship, and issues tagged for newcomers.",
     },
     {
-      icon: "icon-[mdi--account-multiple]",
+      icon: "mdi:account-multiple",
       title: "Community Support",
       description: "Connect with other students and mentors working on the same projects.",
     },
@@ -53,7 +54,10 @@
         <div class="flex relative flex-col justify-between h-full min-w-80">
           <!-- Logo -->
           <div class="flex gap-2 items-center text-2xl font-bold">
-            <span class="icon-[mdi--code] size-8"></span>
+            <Icon
+              icon="mdi:code"
+              class="size-8"
+            />
             <span>OpenPath</span>
           </div>
 
@@ -62,7 +66,10 @@
             {#each features as feature}
               <div class="flex gap-3 items-center">
                 <div class="p-2 rounded-full bg-white/20 flex">
-                  <span class="{feature.icon} size-6"></span>
+                  <Icon
+                    icon={feature.icon}
+                    class="size-6"
+                  />
                 </div>
                 <div>
                   <h3 class="font-medium">{feature.title}</h3>
@@ -88,7 +95,10 @@
           {#each benefits as benefit}
             <div class="flex gap-3 items-start">
               <div class="p-1 text-emerald-600 bg-emerald-100 rounded-full flex">
-                <span class="{benefit.icon} size-5"></span>
+                <Icon
+                  icon={benefit.icon}
+                  class="size-6"
+                />
               </div>
               <div>
                 <h3 class="font-semibold">{benefit.title}</h3>

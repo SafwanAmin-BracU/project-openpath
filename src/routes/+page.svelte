@@ -43,9 +43,9 @@
   <!-- Centered Card Wrapper -->
   <div class="overflow-hidden bg-white rounded-xl shadow-2xl max-w-5xl">
     <!-- Centered Card -->
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-row">
       <!-- Left Column -->
-      <div class="relative col-span-5 p-8 text-white bg-gradient-to-br from-emerald-500 to-teal-600 md:p-12">
+      <div class="relative p-8 text-white bg-gradient-to-br from-emerald-500 to-teal-600 md:p-12">
         <!-- Background Decorations -->
         <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-emerald-400/20"></div>
         <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-teal-400/20"></div>
@@ -58,10 +58,10 @@
           </div>
 
           <!-- Feature List -->
-          <div class="space-y-6">
+          <div class="flex flex-col gap-6">
             {#each features as feature}
               <div class="flex gap-3 items-center">
-                <div class="p-2 rounded-full bg-white/20">
+                <div class="p-2 rounded-full bg-white/20 flex">
                   <span class="{feature.icon} size-6"></span>
                 </div>
                 <div>
@@ -75,7 +75,7 @@
       </div>
 
       <!-- Right Column -->
-      <div class="col-span-7 p-8 md:p-12">
+      <div class="p-8 md:p-12">
         <h1 class="mb-4 text-3xl font-bold text-slate-900 md:text-4xl">
           Turn Your CS Knowledge Into Real-World Impact
         </h1>
@@ -87,7 +87,7 @@
         <div class="mb-8 space-y-4 text-slate-700">
           {#each benefits as benefit}
             <div class="flex gap-3 items-start">
-              <div class="p-1 text-emerald-600 bg-emerald-100 rounded-full">
+              <div class="p-1 text-emerald-600 bg-emerald-100 rounded-full flex">
                 <span class="{benefit.icon} size-5"></span>
               </div>
               <div>

@@ -18,6 +18,9 @@ importers:
       '@iconify/json':
         specifier: ^2.2.331
         version: 2.2.331
+      '@iconify/svelte':
+        specifier: ^4.2.0
+        version: 4.2.0(svelte@5.28.2)
       '@iconify/tailwind':
         specifier: ^1.2.0
         version: 1.2.0
@@ -725,6 +728,11 @@ packages:
 
   '@iconify/json@2.2.331':
     resolution: {integrity: sha512-K8hDKDFJ31nF2mERN6Nfxv4peXZfaN4kmZqeBpCRhHA/5/SCp+hx9ID4kLH3lEhBm1eqmXfZjwOC2v7FnaFHYw==}
+
+  '@iconify/svelte@4.2.0':
+    resolution: {integrity: sha512-fEl0T7SAPonK7xk6xUlRPDmFDZVDe2Z7ZstlqeDS/sS8ve2uyU+Qa8rTWbIqzZJlRvONkK5kVXiUf9nIc+6OOQ==}
+    peerDependencies:
+      svelte: '>4.0.0'
 
   '@iconify/tailwind4@1.0.6':
     resolution: {integrity: sha512-43ZXe+bC7CuE2LCgROdqbQeFYJi/J7L/k1UpSy8KDQlWVsWxPzLSWbWhlJx4uRYLOh1NRyw02YlDOgzBOFNd+A==}
@@ -2489,6 +2497,11 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.2
+
+  '@iconify/svelte@4.2.0(svelte@5.28.2)':
+    dependencies:
+      '@iconify/types': 2.0.0
+      svelte: 5.28.2
 
   '@iconify/tailwind4@1.0.6(tailwindcss@4.1.4)':
     dependencies:

@@ -1,7 +1,27 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 
+/* variables */
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+  --line-height: 1.5;
+  --border-width: 0.125rem;
+  --border-radius: 0.5rem;
+}
+
+/* global styles */
+html {
+  @apply box-border p-0 m-0;
+  @apply font-sans text-base antialiased;
+}
+
+/* body styles */
 body {
   @apply flex h-screen w-screen box-border p-0 m-0 flex-col;
-  @apply bg-slate-200 text-slate-900 dark:bg-slate-900 dark:text-slate-200;
+  @apply bg-slate-200 text-slate-900;
+  /* @apply dark:bg-slate-900 dark:text-slate-200; */
 }
+

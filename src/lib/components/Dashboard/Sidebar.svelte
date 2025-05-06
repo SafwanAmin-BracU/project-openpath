@@ -2,8 +2,6 @@
   import { page } from "$app/state";
   import Icon from "@iconify/svelte";
 
-  $inspect(page);
-
   // state to track whether the menu is collapsed or expanded
   let isMenuCollapsed = $state<boolean>(false);
 
@@ -38,7 +36,7 @@
       label: "Comminities",
     },
     {
-      route: "/dashboard/user/analytics",
+      route: "/dashboard/analytics",
       icon: "mdi:analytics",
       label: "Analytics",
     },
@@ -46,12 +44,12 @@
 
   const appSettingsMenuItems = [
     {
-      route: "/dashboard/user/settings",
+      route: "/dashboard/settings",
       icon: "mdi:cog-outline",
       label: "Settings",
     },
     {
-      route: "/dashboard/user/profile",
+      route: "/dashboard/user",
       icon: "mdi:account-outline",
       label: "Profile",
     },
@@ -83,7 +81,7 @@
     </button>
   </div>
   <!-- Nav Menu -->
-  <div class="navbar-group grow">
+  <div class="py-1.5 border-gray-400 navbar-group grow border-y-1">
     {#each navMenuItems as item}
       {@render menuItemSnippet(item.route, item.icon, item.label)}
     {/each}
@@ -132,12 +130,12 @@
 
   .menu-item {
     @apply inline-flex gap-3 justify-start items-center px-4 py-2 w-full h-10 text-sm font-medium whitespace-nowrap rounded-md;
-    @variant hover {
-      @apply bg-gray-300;
-    }
   }
 
-  .menu-item.active {
-    @apply bg-gray-300;
+  .menu-item.active,
+  .menu-item:hover {
+    @apply bg-gray-700 text-gray-100;
+    /* @apply bg-gray-300; */
+    /* @apply border-1 border-gray-400; */
   }
 </style>

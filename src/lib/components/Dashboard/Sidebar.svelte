@@ -64,19 +64,23 @@
 >
   <!-- Logo -->
   <div class="text-emerald-700 navbar-group">
-    <div class="flex gap-1.5 justify-center items-center">
+    <button
+      type="button"
+      class="flex gap-1.5 justify-center items-center"
+      onclick={toggleMenu}
+      aria-label={isMenuCollapsed ? "Expand Menu" : "Collapse Menu"}
+    >
       <Icon
         icon="mdi:code"
         class="w-8 h-8"
         width="24"
         height="24"
-        onclick={toggleMenu}
       />
       <span
         class="text-xl font-bold"
         class:hidden={isMenuCollapsed}>OPENPATH</span
       >
-    </div>
+    </button>
   </div>
   <!-- Nav Menu -->
   <div class="navbar-group grow">
@@ -97,7 +101,7 @@
     {href}
     class="menu-item"
     aria-label={label}
-    class:active={page.route.id?.includes(href)}
+    class:active={page.route.id?.endsWith(href)}
   >
     <Icon
       {icon}

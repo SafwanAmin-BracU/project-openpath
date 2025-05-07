@@ -132,25 +132,25 @@
         <!-- Tab buttons with active state styling -->
         <button
           class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "All Projects" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          on:click={() => (activeTab = "All Projects")}
+          onclick={() => (activeTab = "All Projects")}
         >
           All Projects
         </button>
         <button
           class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Recommended" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          on:click={() => (activeTab = "Recommended")}
+          onclick={() => (activeTab = "Recommended")}
         >
           Recommended
         </button>
         <button
           class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Trending" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          on:click={() => (activeTab = "Trending")}
+          onclick={() => (activeTab = "Trending")}
         >
           Trending
         </button>
         <button
           class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Beginner Friendly" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          on:click={() => (activeTab = "Beginner Friendly")}
+          onclick={() => (activeTab = "Beginner Friendly")}
         >
           Beginner Friendly
         </button>
@@ -255,7 +255,7 @@
         <!-- Reset filters button -->
         <button
           class="px-4 py-2 w-full text-sm font-medium text-gray-800 bg-gray-200 rounded-md transition-colors hover:bg-gray-300"
-          on:click={resetFilters}
+          onclick={resetFilters}
         >
           Reset Filters
         </button>

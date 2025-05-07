@@ -136,6 +136,6 @@
   .menu-item:hover {
     @apply bg-gray-700 text-gray-100;
     /* @apply bg-gray-300; */
-    /* @apply border-1 border-gray-400; */
+    /* @apply border-2 border-slate-400; */
   }
 </style>

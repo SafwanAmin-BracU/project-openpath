@@ -21,7 +21,6 @@ html {
 /* body styles */
 body {
   @apply flex h-screen w-screen box-border p-0 m-0 flex-col;
-  @apply bg-slate-200 text-slate-900;
+  @apply bg-white text-slate-900;
   /* @apply dark:bg-slate-900 dark:text-slate-200; */
 }
-

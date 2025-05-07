@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex w-full h-full">
-  <!-- {@render children()} -->
+  {@render children()}
 </div>
 
 <style lang="postcss">

@@ -1,5 +1,5 @@
 <!-- Main container with scrolling -->
-<div class="flex p-4 w-full h-full">
+<div class="flex">
   <div class="flex-1">
     <!-- Full height column layout -->
     <div class="flex flex-col w-full h-full">

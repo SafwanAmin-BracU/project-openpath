@@ -2,8 +2,6 @@
   import { page } from "$app/state";
   import Icon from "@iconify/svelte";
 
-  console.log(page.url.pathname);
-
   // state to track whether the menu is collapsed or expanded
   let isMenuCollapsed = $state<boolean>(false);
 
@@ -99,7 +97,7 @@
     {href}
     class="menu-item"
     aria-label={label}
-    class:active={page.route.id?.endsWith(href)}
+    class:active={page.url.pathname === href}
   >
     <Icon
       {icon}
@@ -119,7 +117,7 @@
   }
 
   .navbar-wrapper {
-    @apply flex w-[15rem] h-full border-gray-400 border-1 flex-col;
+    @apply flex w-[15rem] h-full border-gray-400 border-r-1 flex-col;
     @apply text-slate-950;
     @apply transition-all duration-300 ease-in-out;
   }
@@ -134,7 +132,7 @@
 
   .menu-item.active,
   .menu-item:hover {
-    @apply bg-gray-700 text-gray-100;
+    @apply bg-emerald-700 text-gray-100;
     /* @apply bg-gray-300; */
     /* @apply border-2 border-slate-400; */
   }

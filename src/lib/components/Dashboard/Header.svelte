@@ -1,8 +1,9 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
+  import { goto } from "$app/navigation";
 </script>
 
-<div class="flex gap-3 justify-between items-center p-3 w-full h-16 border-gray-400 border-b-1">
+<div class="flex gap-3 justify-between items-center p-3 w-full h-16">
   <input
     class="flex h-10 w-[25rem] rounded-full border-gray-400 border-1 px-3 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
     placeholder="Search..."
@@ -26,7 +27,7 @@
       aria-label="Logout"
       onclick={() => {
         // redirect to index page
-        window.location.href = "/";
+        goto("/");
       }}
     >
       <Icon
@@ -46,7 +47,7 @@
     @apply flex gap-1.5 justify-center items-center p-2 rounded-xl border-gray-400 border-1;
     @apply transition-all duration-300 ease-in-out;
     @variant hover {
-      @apply bg-gray-200;
+      @apply bg-emerald-700 text-white;
     }
     cursor: pointer;
   }

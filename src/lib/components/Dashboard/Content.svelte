@@ -2,7 +2,7 @@
   let { children } = $props();
 </script>
 
-<div class="flex p-4 w-full h-full">
+<div class="flex overflow-hidden p-4 border-gray-400 size-full border-t-1">
   {@render children()}
 </div>
 

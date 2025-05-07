@@ -2,6 +2,8 @@
   import { page } from "$app/state";
   import Icon from "@iconify/svelte";
 
+  console.log(page.url.pathname);
+
   // state to track whether the menu is collapsed or expanded
   let isMenuCollapsed = $state<boolean>(false);
 
@@ -21,7 +23,7 @@
       label: "Find Projects",
     },
     {
-      route: "/dashboard/user/portfolio",
+      route: "/dashboard/portfolio",
       icon: "mdi:folder-outline",
       label: "My Portfolio",
     },
@@ -64,15 +66,13 @@
   <div class="text-emerald-700 navbar-group">
     <button
       type="button"
-      class="flex gap-1.5 justify-center items-center"
+      class="flex justify-center items-center"
       onclick={toggleMenu}
       aria-label={isMenuCollapsed ? "Expand Menu" : "Collapse Menu"}
     >
       <Icon
         icon="mdi:code"
-        class="w-8 h-8"
-        width="24"
-        height="24"
+        class="p-2 size-12"
       />
       <span
         class="text-xl font-bold"
@@ -115,11 +115,11 @@
   @reference 'tailwindcss';
 
   .navbar-group {
-    @apply flex gap-1 px-2 w-full flex-col justify-start items-center;
+    @apply flex gap-1 p-2 w-full flex-col justify-start items-center;
   }
 
   .navbar-wrapper {
-    @apply flex w-[15rem] h-full border-gray-400 border-1 px-2 py-4 flex-col gap-3;
+    @apply flex w-[15rem] h-full border-gray-400 border-1 flex-col;
     @apply text-slate-950;
     @apply transition-all duration-300 ease-in-out;
   }

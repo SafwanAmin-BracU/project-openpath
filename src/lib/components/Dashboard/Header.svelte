@@ -4,7 +4,7 @@
 
 <div class="flex gap-3 justify-between items-center p-3 w-full h-16 border-gray-400 border-b-1">
   <input
-    class="flex h-10 w-[25rem] rounded-full border-gray-400 border-1 px-3"
+    class="flex h-10 w-[25rem] rounded-full border-gray-400 border-1 px-3 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
     placeholder="Search..."
   />
   <div class="flex gap-2 h-10 w-fit">

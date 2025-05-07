@@ -2,7 +2,7 @@
   let { children } = $props();
 </script>
 
-<div class="flex w-full h-full">
+<div class="flex p-4 w-full h-full">
   {@render children()}
 </div>
 

@@ -3,7 +3,6 @@
   let { children } = $props();
 </script>
 
-
-<div class="flex w-full h-full bg-slate-100 text-slate-900">
+<div class="flex w-full h-full">
   {@render children()}
 </div>

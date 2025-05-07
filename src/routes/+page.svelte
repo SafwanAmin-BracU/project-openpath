@@ -1,7 +1,13 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
   // Left column features
-  const features = [
+
+  type listItem = {
+    icon: string;
+    title: string;
+    description: string;
+  };
+  const features: listItem[] = [
     {
       icon: "mdi:source-branch",
       title: "Find Your Project",
@@ -20,7 +26,7 @@
   ];
 
   // Right column benefits
-  const benefits = [
+  const benefits: listItem[] = [
     {
       icon: "mdi:earth",
       title: "Skill-Based Matching",
@@ -57,6 +63,8 @@
             <Icon
               icon="mdi:code"
               class="size-8"
+              width="32"
+              height="32"
             />
             <span>OpenPath</span>
           </div>
@@ -64,18 +72,7 @@
           <!-- Feature List -->
           <div class="flex flex-col gap-6">
             {#each features as feature}
-              <div class="flex gap-3 items-center">
-                <div class="flex p-2 rounded-full bg-white/20">
-                  <Icon
-                    icon={feature.icon}
-                    class="size-6"
-                  />
-                </div>
-                <div>
-                  <h3 class="font-medium">{feature.title}</h3>
-                  <p class="text-sm text-white/80">{feature.description}</p>
-                </div>
-              </div>
+              {@render FeatureListItem(feature)}
             {/each}
           </div>
         </div>
@@ -93,18 +90,7 @@
         <!-- Benefits List -->
         <div class="mb-8 space-y-4 text-slate-700">
           {#each benefits as benefit}
-            <div class="flex gap-3 items-start">
-              <div class="flex p-1 text-emerald-600 bg-emerald-100 rounded-full">
-                <Icon
-                  icon={benefit.icon}
-                  class="size-6"
-                />
-              </div>
-              <div>
-                <h3 class="font-semibold">{benefit.title}</h3>
-                <p class="text-sm text-slate-600">{benefit.description}</p>
-              </div>
-            </div>
+            {@render BenefitsListItem(benefit)}
           {/each}
         </div>
 
@@ -121,3 +107,33 @@
     </div>
   </div>
 </div>
+
+{#snippet FeatureListItem(feature: listItem)}
+  <div class="flex gap-3 items-center">
+    <div class="flex p-2 rounded-full bg-white/20">
+      <Icon
+        icon={feature.icon}
+        class="size-6"
+      />
+    </div>
+    <div>
+      <h3 class="font-medium">{feature.title}</h3>
+      <p class="text-sm text-white/80">{feature.description}</p>
+    </div>
+  </div>
+{/snippet}
+
+{#snippet BenefitsListItem(benefit: listItem)}
+  <div class="flex gap-3 items-start">
+    <div class="flex p-1 text-emerald-600 bg-emerald-100 rounded-full">
+      <Icon
+        icon={benefit.icon}
+        class="size-6"
+      />
+    </div>
+    <div>
+      <h3 class="font-semibold">{benefit.title}</h3>
+      <p class="text-sm text-slate-600">{benefit.description}</p>
+    </div>
+  </div>
+{/snippet}

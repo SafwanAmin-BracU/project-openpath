@@ -95,12 +95,18 @@
         </div>
 
         <!-- CTA Button -->
+
         <div>
           <a
             href="/dashboard"
-            class="flex gap-2 justify-center items-center px-4 py-2 h-10 text-sm font-medium text-white whitespace-nowrap bg-emerald-600 rounded-md hover:bg-emerald-700"
+            class="cta-btn"
           >
-            Get Started
+            <Icon
+              icon="mdi:github"
+              width="24"
+              height="24"
+            />
+            Sign in with GitHub
           </a>
         </div>
       </div>
@@ -137,3 +143,14 @@
     </div>
   </div>
 {/snippet}
+
+<style lang="postcss">
+  @reference 'tailwindcss';
+  .cta-btn {
+    @apply flex gap-2 justify-center items-center px-4 py-2 h-10 text-sm font-medium  whitespace-nowrap rounded-md;
+    @apply border-2 border-gray-900 text-gray-900 bg-white;
+    @variant hover {
+      @apply bg-gray-900 text-white;
+    }
+  }
+</style>

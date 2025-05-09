@@ -51,4 +51,10 @@
     }
     cursor: pointer;
   }
+
+  /* style the scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem; /* for vertical scrollbars */
+  }
 </style>

@@ -74,8 +74,10 @@
       />
       <span
         class="text-xl font-bold"
-        class:hidden={isMenuCollapsed}>OPENPATH</span
+        class:hidden={isMenuCollapsed}
       >
+        OPENPATH
+      </span>
     </button>
   </div>
   <!-- Nav Menu -->

@@ -35,8 +35,6 @@ A developer analytics platform that tracks and visualizes open-source contributi
    cd project-openpath
    ```
 
-````
-
 2. Install dependencies using pnpm:
 
    ```bash
@@ -94,8 +92,3 @@ Follow these guidelines:
 ## License
 
 MIT License - See [LICENSE](LICENSE) for details
-
-```
-
-```
-````

@@ -28,6 +28,7 @@
 		"@tailwindcss/typography": "^0.5.15",
 		"@tailwindcss/vite": "^4.0.0",
 		"@types/better-sqlite3": "^7.6.12",
+		"@types/node": "^22",
 		"drizzle-kit": "^0.30.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
@@ -37,11 +38,14 @@
 		"wrangler": "^4.13.0"
 	},
 	"dependencies": {
+		"@libsql/client": "^0.14.0",
+		"@neondatabase/serverless": "^0.10.4",
 		"@node-rs/argon2": "^2.0.2",
 		"@oslojs/crypto": "^1.0.1",
 		"@oslojs/encoding": "^1.1.0",
 		"better-sqlite3": "^11.8.0",
 		"drizzle-orm": "^0.40.0",
+		"drizzle-seed": "^0.3.1",
 		"lucia": "^3.2.2"
 	},
 	"pnpm": {

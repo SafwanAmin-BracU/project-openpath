@@ -16,32 +16,18 @@
       label: "Dashboard",
     },
     {
-      route: "/dashboard/projects",
+      route: "/projects",
       icon: "mdi:compass-outline",
       label: "Find Projects",
     },
+
     {
-      route: "/dashboard/portfolio",
-      icon: "mdi:folder-outline",
-      label: "My Portfolio",
-    },
-    {
-      route: "/dashboard/tutorials",
-      icon: "mdi:learn-outline",
-      label: "Learn & Grow",
-    },
-    {
-      route: "/dashboard/feed",
-      icon: "mdi:message-outline",
-      label: "Feed",
-    },
-    {
-      route: "/dashboard/communities",
+      route: "/communities",
       icon: "mdi:account-group-outline",
       label: "Comminities",
     },
     {
-      route: "/dashboard/analytics",
+      route: "/analytics",
       icon: "mdi:analytics",
       label: "Analytics",
     },
@@ -49,12 +35,12 @@
 
   const appSettingsMenuItems = [
     {
-      route: "/dashboard/settings",
+      route: "/settings",
       icon: "mdi:cog-outline",
       label: "Settings",
     },
     {
-      route: "/dashboard/user",
+      route: "/user",
       icon: "mdi:account-outline",
       label: "Profile",
     },
@@ -104,7 +90,7 @@
     {href}
     class="menu-item"
     aria-label={label}
-    class:active={page.url.pathname === href}
+    class:active={page.url.pathname.startsWith(href)}
   >
     <Icon
       {icon}

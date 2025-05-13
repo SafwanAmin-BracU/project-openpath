@@ -9,27 +9,15 @@
     placeholder="Search..."
   />
   <div class="flex gap-2 h-10 w-fit">
-    <!-- notification icon -->
-    <button
-      type="button"
-      aria-label="Notifications"
-    >
-      <Icon
-        icon="mdi:bell-outline"
-        class="size-6"
-        width="24"
-        height="24"
-      />
-    </button>
     <!-- profile icon -->
     <button
       type="button"
       aria-label="Logout"
       onclick={() => {
-        // redirect to index page
         goto("/");
       }}
     >
+      Logout
       <Icon
         icon="mdi:logout"
         class="size-6"
@@ -52,9 +40,8 @@
     cursor: pointer;
   }
 
-  /* style the scrollbar */
   ::-webkit-scrollbar {
     width: 0.5rem;
-    height: 0.5rem; /* for vertical scrollbars */
+    height: 0.5rem;
   }
 </style>

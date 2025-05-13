@@ -2,7 +2,6 @@
   import Icon from "@iconify/svelte";
 
   export type RecommendCardItemType = {
-    icon: string;
     title: string;
     description: string;
     stars: number;
@@ -19,7 +18,7 @@
   <!-- Project icon -->
   <div class="flex justify-center items-center rounded-md border size-10 shrink-0 bg-muted">
     <Icon
-      icon={recommend.icon}
+      icon="mdi:code"
       class="size-5"
     />
   </div>

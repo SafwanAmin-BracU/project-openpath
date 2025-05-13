@@ -1,5 +1,8 @@
 <script lang="ts">
   import Icon from "@iconify/svelte";
+  import type { PageProps } from "./$types";
+  import ProjectCard from "./ProjectCard.svelte";
+  let { data }: PageProps = $props();
 
   // ===== STATE MANAGEMENT =====
   // Filter states using Svelte 5's $state for reactivity
@@ -11,79 +14,13 @@
 
   // UI state management
   let sortBy = $state("Skill Match"); // Current sort option
-  let activeTab = $state("All Projects"); // Currently active tab
 
   // ===== MOCK DATA =====
   // Sample projects data - would be replaced with GitHub API data in production
-  const projects = [
-    {
-      id: 1,
-      name: "React Query",
-      description: "Hooks for fetching, caching and updating asynchronous data in React",
-      languages: ["JavaScript", "React", "TypeScript"],
-      healthScore: 9.2,
-      contributors: 342,
-      responseTime: "1-2 days",
-      difficulty: "Intermediate",
-      skillMatch: 94,
-      goodFirstIssues: 12,
-      stars: 29.5,
-    },
-    {
-      id: 2,
-      name: "Next.js",
-      description: "The React Framework for Production",
-      languages: ["JavaScript", "React", "TypeScript"],
-      healthScore: 9.8,
-      contributors: 2241,
-      responseTime: "3-5 days",
-      difficulty: "Intermediate",
-      skillMatch: 87,
-      goodFirstIssues: 8,
-      stars: 106,
-    },
-    // ... more projects would be added here
-    {
-      id: 3,
-      name: "Express.js",
-      description: "Fast, unopinionated, minimalist web framework for Node.js",
-      languages: ["JavaScript", "Node.js"],
-      healthScore: 7.9,
-      contributors: 262,
-      responseTime: "1 week+",
-      difficulty: "Beginner",
-      skillMatch: 81,
-      goodFirstIssues: 6,
-      stars: 55.3,
-    },
-    {
-      id: 4,
-      name: "Fastify",
-      description: "Fast and low overhead web framework for Node.js",
-      languages: ["JavaScript", "Node.js", "TypeScript"],
-      healthScore: 8.5,
-      contributors: 156,
-      responseTime: "1-2 days",
-      difficulty: "Advanced",
-      skillMatch: 76,
-      goodFirstIssues: 5,
-      stars: 26.9,
-    },
-  ];
-
-  // ===== REACTIVE EFFECTS =====
-  // Filter projects based on selected filters
-  $effect(() => {
-    // This would filter projects based on selected filters
-    // Implementation would use the state variables to filter the projects array
-    // For now, we're just using the mock data
-  });
+  let { projects, difficultyLevels, languageOptions } = data;
 
   // ===== FILTER OPTIONS =====
   // Available options for filter dropdowns and checkboxes
-  const difficultyLevels = ["Beginner", "Intermediate", "Advanced"];
-  const languageOptions = ["JavaScript", "TypeScript", "Python", "Java", "C++", "Go", "Rust"];
-  const domainOptions = ["Web Development", "Mobile Development", "Machine Learning", "Data Science", "DevOps"];
 
   // ===== HELPER FUNCTIONS =====
   // Reset all filters to their default values
@@ -126,35 +63,6 @@
     <div class="flex justify-between items-center pb-2 border-b">
       <!-- Project count indicator -->
       <span class="text-sm text-muted-foreground">Showing {projects.length} projects</span>
-
-      <!-- Tab navigation -->
-      <div class="flex space-x-1">
-        <!-- Tab buttons with active state styling -->
-        <button
-          class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "All Projects" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          onclick={() => (activeTab = "All Projects")}
-        >
-          All Projects
-        </button>
-        <button
-          class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Recommended" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          onclick={() => (activeTab = "Recommended")}
-        >
-          Recommended
-        </button>
-        <button
-          class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Trending" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          onclick={() => (activeTab = "Trending")}
-        >
-          Trending
-        </button>
-        <button
-          class={`px-3 py-1 text-sm rounded-md transition-colors ${activeTab === "Beginner Friendly" ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}
-          onclick={() => (activeTab = "Beginner Friendly")}
-        >
-          Beginner Friendly
-        </button>
-      </div>
     </div>
 
     <!-- ===== MAIN CONTENT GRID ===== -->
@@ -224,29 +132,11 @@
               <label class="flex gap-2 items-center">
                 <input
                   type="checkbox"
-                  value={language}
+                  value={language.name}
                   bind:group={selectedLanguages}
                   class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
                 />
-                <span class="text-sm">{language}</span>
-              </label>
-            {/each}
-          </div>
-        </div>
-
-        <!-- Domains filter -->
-        <div>
-          <h3 class="mb-2 font-medium">Domains</h3>
-          <div class="overflow-y-auto space-y-2 max-h-48">
-            {#each domainOptions as domain}
-              <label class="flex gap-2 items-center">
-                <input
-                  type="checkbox"
-                  value={domain}
-                  bind:group={selectedDomains}
-                  class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
-                />
-                <span class="text-sm">{domain}</span>
+                <span class="text-sm">{language.name}</span>
               </label>
             {/each}
           </div>
@@ -265,92 +155,7 @@
       <div class="space-y-4">
         <!-- Project cards - each card represents one project -->
         {#each projects as project}
-          <div class="p-4 rounded-lg border transition-colors hover:bg-muted/50">
-            <!-- Project header with icon, name, and star count -->
-            <div class="flex justify-between items-start">
-              <div class="flex gap-4">
-                <!-- Project icon -->
-                <div class="flex justify-center items-center w-10 h-10 rounded-md border shrink-0 bg-muted">
-                  <Icon
-                    icon="mdi:code-braces"
-                    class="w-5 h-5"
-                  />
-                </div>
-
-                <!-- Project title and description -->
-                <div>
-                  <h3 class="flex gap-2 items-center text-lg font-semibold">
-                    {project.name}
-                    <!-- Star count -->
-                    <span class="flex items-center text-sm font-normal text-amber-500">
-                      <Icon
-                        icon="mdi:star"
-                        class="mr-0.5 w-4 h-4"
-                      />
-                      {project.stars}k
-                    </span>
-                  </h3>
-                  <p class="text-sm text-muted-foreground">{project.description}</p>
-                </div>
-              </div>
-
-              <!-- Save button -->
-              <button class="px-3 py-1 text-sm rounded-md border transition-colors hover:bg-muted">Save</button>
-            </div>
-
-            <!-- Technology tags -->
-            <div class="flex flex-wrap gap-2 mt-3">
-              {#each project.languages as language}
-                <div
-                  class="inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-full border bg-secondary text-secondary-foreground"
-                >
-                  {language}
-                </div>
-              {/each}
-            </div>
-
-            <!-- Project metrics grid -->
-            <div class="grid grid-cols-3 gap-4 mt-4 text-sm">
-              <!-- Health score -->
-              <div>
-                <div class="text-muted-foreground">Health Score</div>
-                <div class="flex items-center font-medium">
-                  <div class="mr-2 w-2 h-2 bg-emerald-600 rounded-full"></div>
-                  {project.healthScore}/10
-                </div>
-              </div>
-
-              <!-- Contributors count -->
-              <div>
-                <div class="text-muted-foreground">Contributors</div>
-                <div class="flex items-center font-medium">
-                  <Icon
-                    icon="mdi:account-group"
-                    class="mr-1 w-4 h-4"
-                  />
-                  {project.contributors}
-                </div>
-              </div>
-
-              <!-- Response time -->
-              <div>
-                <div class="text-muted-foreground">Response Time</div>
-                <div class="font-medium">{project.responseTime}</div>
-              </div>
-
-              <!-- Difficulty level -->
-              <div>
-                <div class="text-muted-foreground">Difficulty</div>
-                <div class="font-medium">{project.difficulty}</div>
-              </div>
-            </div>
-
-            <!-- Footer with good first issues and skill match -->
-            <div class="flex justify-between items-center pt-2 mt-2 border-t">
-              <div class="text-xs text-muted-foreground">{project.goodFirstIssues} good first issues</div>
-              <div class="text-xs font-medium text-emerald-600">{project.skillMatch}% skill match</div>
-            </div>
-          </div>
+          <ProjectCard {project} />
         {/each}
       </div>
     </div>

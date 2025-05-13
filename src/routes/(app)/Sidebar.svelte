@@ -24,7 +24,7 @@
     {
       route: "/communities",
       icon: "mdi:account-group-outline",
-      label: "Comminities",
+      label: "Communities",
     },
     {
       route: "/analytics",

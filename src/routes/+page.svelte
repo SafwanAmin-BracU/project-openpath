@@ -98,15 +98,14 @@
 
         <div>
           <a
-            href="/dashboard"
+            href="/auth"
             class="cta-btn"
           >
+            Continue to your dashboard
             <Icon
-              icon="mdi:github"
-              width="24"
-              height="24"
+              icon="mdi:arrow-right"
+              class="size-6"
             />
-            Sign in with GitHub
           </a>
         </div>
       </div>
@@ -148,9 +147,9 @@
   @reference 'tailwindcss';
   .cta-btn {
     @apply flex gap-2 justify-center items-center px-4 py-2 h-10 text-sm font-medium  whitespace-nowrap rounded-md;
-    @apply border-2 border-gray-900 text-gray-900 bg-white;
+    @apply border-2 border-emerald-600 text-emerald-600 bg-white;
     @variant hover {
-      @apply bg-gray-900 text-white;
+      @apply bg-emerald-600 text-white;
     }
   }
 </style>

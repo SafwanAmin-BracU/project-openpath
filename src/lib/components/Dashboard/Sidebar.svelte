@@ -31,6 +31,11 @@
       label: "Learn & Grow",
     },
     {
+      route: "/dashboard/feed",
+      icon: "mdi:message-outline",
+      label: "Feed",
+    },
+    {
       route: "/dashboard/communities",
       icon: "mdi:account-group-outline",
       label: "Comminities",

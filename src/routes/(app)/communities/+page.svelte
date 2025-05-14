@@ -8,60 +8,7 @@
     data-orientation="horizontal"
     class="space-y-6"
   >
-    <div
-      role="tablist"
-      aria-orientation="horizontal"
-      class="inline-flex justify-center items-center p-1 mb-4 h-10 rounded-md bg-muted text-muted-foreground"
-      tabindex="0"
-      data-orientation="horizontal"
-      style="outline: none;"
-    >
-      <button
-        type="button"
-        role="tab"
-        aria-selected="true"
-        aria-controls="radix-«rot»-content-communities"
-        data-state="active"
-        id="radix-«rot»-trigger-communities"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
-        tabindex="0"
-        data-orientation="horizontal"
-        data-radix-collection-item="">Communities</button
-      ><button
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="radix-«rot»-content-mentors"
-        data-state="inactive"
-        id="radix-«rot»-trigger-mentors"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
-        tabindex="-1"
-        data-orientation="horizontal"
-        data-radix-collection-item="">Find Mentors</button
-      ><button
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="radix-«rot»-content-events"
-        data-state="inactive"
-        id="radix-«rot»-trigger-events"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
-        tabindex="-1"
-        data-orientation="horizontal"
-        data-radix-collection-item="">Events</button
-      ><button
-        type="button"
-        role="tab"
-        aria-selected="false"
-        aria-controls="radix-«rot»-content-discussions"
-        data-state="inactive"
-        id="radix-«rot»-trigger-discussions"
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm"
-        tabindex="-1"
-        data-orientation="horizontal"
-        data-radix-collection-item="">Discussions</button
-      >
-    </div>
+    
     <div
       data-state="active"
       data-orientation="horizontal"
@@ -72,48 +19,7 @@
       class="mt-2 space-y-6 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       style=""
     >
-      <div class="flex gap-4 items-center">
-        <div class="relative flex-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="absolute top-2.5 left-2.5 w-4 h-4 lucide lucide-search text-muted-foreground"
-            ><circle
-              cx="11"
-              cy="11"
-              r="8"
-            ></circle><path d="m21 21-4.3-4.3"></path></svg
-          ><input
-            class="flex px-3 py-2 pl-8 w-full h-10 text-sm rounded-md border border-input bg-background ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            placeholder="Search communities by name, description, or topic..."
-            type="search"
-            value=""
-          />
-        </div>
-        <button
-          class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="mr-2 w-4 h-4 lucide lucide-filter"
-            ><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg
-          >Filter</button
-        >
-      </div>
+      
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
         <div
           class="rounded-lg border shadow-sm bg-card text-card-foreground"

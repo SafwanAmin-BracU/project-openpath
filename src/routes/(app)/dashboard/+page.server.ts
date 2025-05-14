@@ -50,19 +50,20 @@ const getRecommends = async () => {
     };
   });
 };
-const getSkills = async (user: object) => {
-  const userSkillsList = await db.select({
-    title: skills.name,
-    percentage: userSkills.proficiency
+// const getSkills = async (user: object) => {
+//   const userSkillsList = await db.select({
+//     title: skills.name,
+//     percentage: userSkills.proficiency
 
-  }).from(users).innerJoin(userSkills, eq(users.id, userSkills.userId)).innerJoin(skills, eq(userSkills.skillId, skills.id)).where(eq(users.id, user.id))
-  return userSkillsList
-};
+//   }).from(users).innerJoin(userSkills, eq(users.id, userSkills.userId)).innerJoin(skills, eq(userSkills.skillId, skills.id)).where(eq(users.id, user.id))
+//   return userSkillsList
+// };
 
 export const load: PageServerLoad = async ({ locals }) => {
   return {
     recents,
     recommends: await getRecommends(),
-    skills: await getSkills(locals.user.id)
+    // skills: await getSkills(locals.user.id)
+    skills: []
   };
 };

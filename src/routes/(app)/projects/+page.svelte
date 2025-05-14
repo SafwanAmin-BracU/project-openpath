@@ -95,11 +95,11 @@
               <label class="flex gap-2 items-center">
                 <input
                   type="checkbox"
-                  value={level}
+                  value={level.difficulty}
                   bind:group={selectedDifficulty}
                   class="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
                 />
-                <span class="text-sm">{level}</span>
+                <span class="text-sm">{level.difficulty}</span>
               </label>
             {/each}
           </div>

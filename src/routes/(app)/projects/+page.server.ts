@@ -18,11 +18,12 @@ const getAllDistinctLanguages = async () => {
 };
 
 const getAllDistinctDifficulties = async () => {
-  return await db
+  const allDistinctDifficulties = await db
     .selectDistinct({
       difficulty: projects.difficulty,
     })
     .from(projects);
+    return allDistinctDifficulties
 };
 
 export const load: PageServerLoad = async () => {

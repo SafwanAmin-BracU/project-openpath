@@ -3,9 +3,9 @@ import type { SkillType } from "./SkillsCardItem.svelte";
 import type { RecommendCardItemType } from "./RecommendCardItem.svelte";
 import type { RecentsItemType } from "./RecentsCardItem.svelte";
 import { db } from "$lib/server/db";
-import { projects, users, userSkills, skills, projectSkillRequirements } from "$lib/server/db/schema";
+import { projects, users, userSkills, skills } from "$lib/server/db/schema";
 import { stringify } from "querystring";
-import { avg, eq, sql, desc, and } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 // PLACEHOLDER DATA
 const recents: RecentsItemType[] = [
   {
@@ -50,41 +50,19 @@ const getRecommends = async () => {
     };
   });
 };
-// const getSkills = async (user: object) => {
-//   const userSkillsList = await db.select({
-//     title: skills.name,
-//     percentage: userSkills.proficiency
+const getSkills = async (user: object) => {
+  const userSkillsList = await db.select({
+    title: skills.name,
+    percentage: userSkills.proficiency
 
-//   }).from(users).innerJoin(userSkills, eq(users.id, userSkills.userId)).innerJoin(skills, eq(userSkills.skillId, skills.id)).where(eq(users.id, user.id))
-//   return userSkillsList
-// };
+  }).from(users).innerJoin(userSkills, eq(users.id, userSkills.userId)).innerJoin(skills, eq(userSkills.skillId, skills.id)).where(eq(users.id, user.id))
+  return userSkillsList
+};
 
 export const load: PageServerLoad = async ({ locals }) => {
-  const recommends = (await db
-    .select({
-      projectId: projects.id,
-      projectName: projects.name,
-      avgSkillRatio: avg(
-        sql`CAST(${userSkills.proficiency} AS FLOAT) / ${projectSkillRequirements.proficiency}`
-      ).as('avg_skill_ratio')
-    })
-    .from(projects)
-    .innerJoin(
-      projectSkillRequirements,
-      eq(projects.id, projectSkillRequirements.projectId)
-    )
-    .leftJoin(
-      userSkills,
-      and(
-        eq(projectSkillRequirements.skillId, userSkills.skillId),
-        eq(userSkills.userId, 1)
-      )
-    )
-    .groupBy(projects.id, projects.name)
-    .orderBy(desc(sql`avg_skill_ratio`)))
   return {
     recents,
-    recommends,
+    recommends: await getRecommends(),
     // skills: await getSkills(locals.user.id)
     skills: []
   };

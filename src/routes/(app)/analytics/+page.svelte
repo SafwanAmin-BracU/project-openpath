@@ -279,7 +279,7 @@
             >
           </div>
           <div class="p-6 pt-0">
-            <div class="text-2xl font-bold">2547</div>
+            <div class="text-2xl font-bold">{data.totalLinesOfCode.count}</div>
             <p class="text-xs text-muted-foreground">842 this month</p>
             <div class="flex gap-1 items-center mt-2 text-xs">
               <div
@@ -333,7 +333,7 @@
             >
           </div>
           <div class="p-6 pt-0">
-            <div class="text-2xl font-bold">15</div>
+            <div class="text-2xl font-bold">{data.closedIssues.count}</div>
             <p class="text-xs text-muted-foreground">5 this month</p>
             <div class="flex gap-1 items-center mt-2 text-xs">
               <div
@@ -455,7 +455,9 @@
                     ></div>
                     <span class="text-sm font-medium">Documentation</span>
                   </div>
-                  <span class="text-sm font-medium">8</span>
+                  <span class="text-sm font-medium"
+                    >{data.projectsContributed.count}</span
+                  >
                 </div>
                 <div
                   aria-valuemax="100"

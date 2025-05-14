@@ -3,11 +3,11 @@
   import { goto } from "$app/navigation";
 </script>
 
-<div class="flex gap-3 justify-between items-center p-3 w-full h-16">
-  <input
+<div class="flex-row-reverse gap-3 items-center p-3 w-full h-16">
+  <!-- <input
     class="flex h-10 w-[25rem] rounded-full border-gray-400 border-1 px-3 focus:ring-2 focus:ring-emerald-600 focus:outline-none"
     placeholder="Search..."
-  />
+  /> -->
   <div class="flex gap-2 h-10 w-fit">
     <!-- profile icon -->
     <button

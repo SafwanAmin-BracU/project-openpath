@@ -3,7 +3,9 @@ import type { SkillType } from "./SkillsCardItem.svelte";
 import type { RecommendCardItemType } from "./RecommendCardItem.svelte";
 import type { RecentsItemType } from "./RecentsCardItem.svelte";
 import { db } from "$lib/server/db";
-import { projects } from "$lib/server/db/schema";
+import { projects, users, userSkills, skills } from "$lib/server/db/schema";
+import { stringify } from "querystring";
+import { eq } from "drizzle-orm";
 // PLACEHOLDER DATA
 const recents: RecentsItemType[] = [
   {
@@ -23,29 +25,12 @@ const recents: RecentsItemType[] = [
   },
 ];
 
-const skills: SkillType[] = [
-  {
-    title: "JavaScript",
-    percentage: 85,
-  },
-  {
-    title: "React",
-    percentage: 60,
-  },
-  {
-    title: "Python",
-    percentage: 60,
-  },
-  {
-    title: "Node.js",
-    percentage: 45,
-  },
-];
+
 
 // END PLACEHOLDER DATA
 
 // GET DATA FROM DATABASE
-const getRecents = async () => {};
+const getRecents = async () => { };
 const getRecommends = async () => {
   // get the recommends from the database
   const recommends = await db.select().from(projects);
@@ -65,12 +50,19 @@ const getRecommends = async () => {
     };
   });
 };
-const getSkills = async () => {};
+const getSkills = async (user: object) => {
+  const userSkillsList = await db.select({
+    title: skills.name,
+    percentage: userSkills.proficiency
 
-export const load: PageServerLoad = async () => {
+  }).from(users).innerJoin(userSkills, eq(users.id, userSkills.userId)).innerJoin(skills, eq(userSkills.skillId, skills.id)).where(eq(users.id, user.id))
+  return userSkillsList
+};
+
+export const load: PageServerLoad = async ({ locals }) => {
   return {
     recents,
     recommends: await getRecommends(),
-    skills,
+    skills: await getSkills(locals.user.id)
   };
 };

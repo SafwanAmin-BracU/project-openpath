@@ -1,8 +1,18 @@
+<script lang="ts">
+  import type { PageProps } from "./$types";
+
+  let { data }: PageProps = $props();
+</script>
+
 <div class="container py-6">
-  <div class="flex flex-col mb-8 sm:flex-row sm:items-center sm:justify-between">
+  <div
+    class="flex flex-col mb-8 sm:flex-row sm:items-center sm:justify-between"
+  >
     <div>
       <h1 class="text-3xl font-bold">Analytics</h1>
-      <p class="text-muted-foreground">Track your contributions, skills growth, and impact</p>
+      <p class="text-muted-foreground">
+        Track your contributions, skills growth, and impact
+      </p>
     </div>
     <div class="flex gap-4 items-center mt-4 sm:mt-0">
       <button
@@ -40,13 +50,9 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="w-4 h-4 lucide lucide-download"
-          ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"
-          ></polyline><line
-            x1="12"
-            x2="12"
-            y1="15"
-            y2="3"
-          ></line></svg
+          ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline
+            points="7 10 12 15 17 10"
+          ></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg
         ></button
       ><button
         class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 w-10"
@@ -61,21 +67,14 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           class="w-4 h-4 lucide lucide-share"
-          ><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="15"
-          ></line></svg
+          ><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline
+            points="16 6 12 2 8 6"
+          ></polyline><line x1="12" x2="12" y1="2" y2="15"></line></svg
         ></button
       >
     </div>
   </div>
-  <div
-    dir="ltr"
-    data-orientation="horizontal"
-    class="space-y-6"
-  >
+  <div dir="ltr" data-orientation="horizontal" class="space-y-6">
     <div
       role="tablist"
       aria-orientation="horizontal"
@@ -145,8 +144,12 @@
           class="rounded-lg border shadow-sm bg-card text-card-foreground"
           data-v0-t="card"
         >
-          <div class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5">
-            <h3 class="text-sm font-medium tracking-tight">Total Contributions</h3>
+          <div
+            class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5"
+          >
+            <h3 class="text-sm font-medium tracking-tight">
+              Total Contributions
+            </h3>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -158,11 +161,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="w-4 h-4 lucide lucide-git-pull-request text-muted-foreground"
-              ><circle
-                cx="18"
-                cy="18"
-                r="3"
-              ></circle><circle
+              ><circle cx="18" cy="18" r="3"></circle><circle
                 cx="6"
                 cy="6"
                 r="3"
@@ -175,7 +174,9 @@
             >
           </div>
           <div class="p-6 pt-0">
-            <div class="text-2xl font-bold">37</div>
+            <div class="text-2xl font-bold">
+              {data.totalContributions.count}
+            </div>
             <p class="text-xs text-muted-foreground">12 this month</p>
             <div class="flex gap-1 items-center mt-2 text-xs">
               <div
@@ -204,8 +205,12 @@
           class="rounded-lg border shadow-sm bg-card text-card-foreground"
           data-v0-t="card"
         >
-          <div class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5">
-            <h3 class="text-sm font-medium tracking-tight">Projects Contributed</h3>
+          <div
+            class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5"
+          >
+            <h3 class="text-sm font-medium tracking-tight">
+              Projects Contributed
+            </h3>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -217,7 +222,9 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="w-4 h-4 lucide lucide-code text-muted-foreground"
-              ><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg
+              ><polyline points="16 18 22 12 16 6"></polyline><polyline
+                points="8 6 2 12 8 18"
+              ></polyline></svg
             >
           </div>
           <div class="p-6 pt-0">
@@ -250,7 +257,9 @@
           class="rounded-lg border shadow-sm bg-card text-card-foreground"
           data-v0-t="card"
         >
-          <div class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5">
+          <div
+            class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5"
+          >
             <h3 class="text-sm font-medium tracking-tight">Lines of Code</h3>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -263,9 +272,10 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="w-4 h-4 lucide lucide-file-text text-muted-foreground"
-              ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path
-                d="M14 2v4a2 2 0 0 0 2 2h4"
-              ></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg
+              ><path
+                d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
+              ></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"
+              ></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg
             >
           </div>
           <div class="p-6 pt-0">
@@ -298,7 +308,9 @@
           class="rounded-lg border shadow-sm bg-card text-card-foreground"
           data-v0-t="card"
         >
-          <div class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5">
+          <div
+            class="flex flex-row justify-between items-center p-6 pb-2 space-y-1.5"
+          >
             <h3 class="text-sm font-medium tracking-tight">Issues Closed</h3>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -311,20 +323,13 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="w-4 h-4 lucide lucide-git-branch text-muted-foreground"
-              ><line
-                x1="6"
-                x2="6"
-                y1="3"
-                y2="15"
-              ></line><circle
+              ><line x1="6" x2="6" y1="3" y2="15"></line><circle
                 cx="18"
                 cy="6"
                 r="3"
-              ></circle><circle
-                cx="6"
-                cy="18"
-                r="3"
-              ></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg
+              ></circle><circle cx="6" cy="18" r="3"></circle><path
+                d="M18 9a9 9 0 0 1-9 9"
+              ></path></svg
             >
           </div>
           <div class="p-6 pt-0">
@@ -372,18 +377,17 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 class="mr-2 w-5 h-5 lucide lucide-line-chart"
-                ><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg
+                ><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"
+                ></path></svg
               >Contribution Activity
             </h3>
-            <p class="text-sm text-muted-foreground">Your contribution frequency over time</p>
+            <p class="text-sm text-muted-foreground">
+              Your contribution frequency over time
+            </p>
           </div>
           <div class="p-6 pt-0">
             <div class="h-[300px] w-full">
-              <canvas
-                class="w-full h-full"
-                width="383"
-                height="150"
-              ></canvas>
+              <canvas class="w-full h-full" width="383" height="150"></canvas>
             </div>
           </div>
         </div>
@@ -404,10 +408,14 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 class="mr-2 w-5 h-5 lucide lucide-pie-chart"
-                ><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg
+                ><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path
+                  d="M22 12A10 10 0 0 0 12 2v10z"
+                ></path></svg
               >Contribution Types
             </h3>
-            <p class="text-sm text-muted-foreground">Breakdown of your contribution types</p>
+            <p class="text-sm text-muted-foreground">
+              Breakdown of your contribution types
+            </p>
           </div>
           <div class="p-6 pt-0">
             <div class="space-y-4">
@@ -540,29 +548,26 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               class="mr-2 w-5 h-5 lucide lucide-git-commit-horizontal"
-              ><circle
-                cx="12"
-                cy="12"
-                r="3"
-              ></circle><line
+              ><circle cx="12" cy="12" r="3"></circle><line
                 x1="3"
                 x2="9"
                 y1="12"
                 y2="12"
-              ></line><line
-                x1="15"
-                x2="21"
-                y1="12"
-                y2="12"
-              ></line></svg
+              ></line><line x1="15" x2="21" y1="12" y2="12"></line></svg
             >Recent Activity
           </h3>
-          <p class="text-sm text-muted-foreground">Your latest contributions and actions</p>
+          <p class="text-sm text-muted-foreground">
+            Your latest contributions and actions
+          </p>
         </div>
         <div class="p-6 pt-0">
           <div class="space-y-4">
-            <div class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50">
-              <div class="flex justify-center items-center mt-1 w-8 h-8 text-purple-600 bg-purple-100 rounded-full">
+            <div
+              class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50"
+            >
+              <div
+                class="flex justify-center items-center mt-1 w-8 h-8 text-purple-600 bg-purple-100 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -574,11 +579,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="w-4 h-4 lucide lucide-git-pull-request"
-                  ><circle
-                    cx="18"
-                    cy="18"
-                    r="3"
-                  ></circle><circle
+                  ><circle cx="18" cy="18" r="3"></circle><circle
                     cx="6"
                     cy="6"
                     r="3"
@@ -593,7 +594,9 @@
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-medium">Fix documentation typos in useQuery hook</h3>
+                    <h3 class="font-medium">
+                      Fix documentation typos in useQuery hook
+                    </h3>
                     <p class="text-sm text-muted-foreground">React Query</p>
                   </div>
                   <div
@@ -603,11 +606,17 @@
                     merged
                   </div>
                 </div>
-                <div class="text-xs text-muted-foreground">Nov 25, 02:30 PM</div>
+                <div class="text-xs text-muted-foreground">
+                  Nov 25, 02:30 PM
+                </div>
               </div>
             </div>
-            <div class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50">
-              <div class="flex justify-center items-center mt-1 w-8 h-8 text-blue-600 bg-blue-100 rounded-full">
+            <div
+              class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50"
+            >
+              <div
+                class="flex justify-center items-center mt-1 w-8 h-8 text-blue-600 bg-blue-100 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -619,26 +628,21 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="w-4 h-4 lucide lucide-git-branch"
-                  ><line
-                    x1="6"
-                    x2="6"
-                    y1="3"
-                    y2="15"
-                  ></line><circle
+                  ><line x1="6" x2="6" y1="3" y2="15"></line><circle
                     cx="18"
                     cy="6"
                     r="3"
-                  ></circle><circle
-                    cx="6"
-                    cy="18"
-                    r="3"
-                  ></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg
+                  ></circle><circle cx="6" cy="18" r="3"></circle><path
+                    d="M18 9a9 9 0 0 1-9 9"
+                  ></path></svg
                 >
               </div>
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-medium">Add example for API routes with TypeScript</h3>
+                    <h3 class="font-medium">
+                      Add example for API routes with TypeScript
+                    </h3>
                     <p class="text-sm text-muted-foreground">Next.js</p>
                   </div>
                   <div
@@ -648,11 +652,17 @@
                     closed
                   </div>
                 </div>
-                <div class="text-xs text-muted-foreground">Nov 23, 10:15 AM</div>
+                <div class="text-xs text-muted-foreground">
+                  Nov 23, 10:15 AM
+                </div>
               </div>
             </div>
-            <div class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50">
-              <div class="flex justify-center items-center mt-1 w-8 h-8 text-amber-600 bg-amber-100 rounded-full">
+            <div
+              class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50"
+            >
+              <div
+                class="flex justify-center items-center mt-1 w-8 h-8 text-amber-600 bg-amber-100 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -672,7 +682,9 @@
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-medium">Review PR #1234: Add new authentication methods</h3>
+                    <h3 class="font-medium">
+                      Review PR #1234: Add new authentication methods
+                    </h3>
                     <p class="text-sm text-muted-foreground">Express.js</p>
                   </div>
                   <div
@@ -682,11 +694,17 @@
                     completed
                   </div>
                 </div>
-                <div class="text-xs text-muted-foreground">Nov 20, 04:45 PM</div>
+                <div class="text-xs text-muted-foreground">
+                  Nov 20, 04:45 PM
+                </div>
               </div>
             </div>
-            <div class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50">
-              <div class="flex justify-center items-center mt-1 w-8 h-8 text-emerald-600 bg-emerald-100 rounded-full">
+            <div
+              class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50"
+            >
+              <div
+                class="flex justify-center items-center mt-1 w-8 h-8 text-emerald-600 bg-emerald-100 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -698,27 +716,20 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="w-4 h-4 lucide lucide-git-commit-horizontal"
-                  ><circle
-                    cx="12"
-                    cy="12"
-                    r="3"
-                  ></circle><line
+                  ><circle cx="12" cy="12" r="3"></circle><line
                     x1="3"
                     x2="9"
                     y1="12"
                     y2="12"
-                  ></line><line
-                    x1="15"
-                    x2="21"
-                    y1="12"
-                    y2="12"
-                  ></line></svg
+                  ></line><line x1="15" x2="21" y1="12" y2="12"></line></svg
                 >
               </div>
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-medium">Update dependencies and fix security vulnerabilities</h3>
+                    <h3 class="font-medium">
+                      Update dependencies and fix security vulnerabilities
+                    </h3>
                     <p class="text-sm text-muted-foreground">Tailwind CSS</p>
                   </div>
                   <div
@@ -728,11 +739,17 @@
                     pushed
                   </div>
                 </div>
-                <div class="text-xs text-muted-foreground">Nov 18, 09:20 AM</div>
+                <div class="text-xs text-muted-foreground">
+                  Nov 18, 09:20 AM
+                </div>
               </div>
             </div>
-            <div class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50">
-              <div class="flex justify-center items-center mt-1 w-8 h-8 text-purple-600 bg-purple-100 rounded-full">
+            <div
+              class="flex gap-4 items-start p-4 rounded-lg border transition-colors hover:bg-muted/50"
+            >
+              <div
+                class="flex justify-center items-center mt-1 w-8 h-8 text-purple-600 bg-purple-100 rounded-full"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -744,11 +761,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class="w-4 h-4 lucide lucide-git-pull-request"
-                  ><circle
-                    cx="18"
-                    cy="18"
-                    r="3"
-                  ></circle><circle
+                  ><circle cx="18" cy="18" r="3"></circle><circle
                     cx="6"
                     cy="6"
                     r="3"
@@ -763,7 +776,9 @@
               <div class="flex-1 space-y-1">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-medium">Implement dark mode toggle with localStorage</h3>
+                    <h3 class="font-medium">
+                      Implement dark mode toggle with localStorage
+                    </h3>
                     <p class="text-sm text-muted-foreground">React</p>
                   </div>
                   <div
@@ -773,7 +788,9 @@
                     open
                   </div>
                 </div>
-                <div class="text-xs text-muted-foreground">Nov 15, 11:30 AM</div>
+                <div class="text-xs text-muted-foreground">
+                  Nov 15, 11:30 AM
+                </div>
               </div>
             </div>
           </div>

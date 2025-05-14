@@ -18,14 +18,14 @@ export const load: PageServerLoad = async ({ locals }) => {
     //     .from(issues)
     //     .where(eq(issues.authorId, locals.user?.id)))[0]
 
-    const totalLinesOfCode = (await db
-        .select({
-            count: sum(issues.linesOfCode)
-        })
-        .from(users)
-        .innerJoin(issues, eq(users.id, issues.authorId))
-        .where(eq(users.id, locals.user?.id))
-        .groupBy(users.id, users.name))[0]
+    // const totalLinesOfCode = (await db
+    //     .select({
+    //         count: sum(issues.linesOfCode)
+    //     })
+    //     .from(users)
+    //     .innerJoin(issues, eq(users.id, issues.authorId))
+    //     .where(eq(users.id, locals.user?.id))
+    //     .groupBy(users.id, users.name))[0]
 
     const closedIssues = (await db
         .selectDistinct({
@@ -35,6 +35,6 @@ export const load: PageServerLoad = async ({ locals }) => {
         .where(eq(issues.authorId, locals.user?.id)))[0]
 
 
-    return { totalContributions, totalLinesOfCode, closedIssues, }
+    return { totalContributions, totalLinesOfCode: { count: 0 }, projectsContributed: { count: 0 }, closedIssues, }
 
 };

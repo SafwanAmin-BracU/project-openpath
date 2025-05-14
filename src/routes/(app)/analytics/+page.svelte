@@ -455,9 +455,7 @@
                     ></div>
                     <span class="text-sm font-medium">Documentation</span>
                   </div>
-                  <span class="text-sm font-medium"
-                    >{data.projectsContributed.count}</span
-                  >
+                  <span class="text-sm font-medium">122333</span>
                 </div>
                 <div
                   aria-valuemax="100"

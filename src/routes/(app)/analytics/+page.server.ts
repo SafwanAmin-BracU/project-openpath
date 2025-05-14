@@ -11,12 +11,12 @@ export const load: PageServerLoad = async ({ locals }) => {
         .innerJoin(projects, eq(issues.projectId, projects.id))
         .where(eq(users.id, locals.user?.id)))[0];
 
-    const projectsContributed = (await db
-        .selectDistinct({
-            count: count(issues.projectId)
-        })
-        .from(issues)
-        .where(eq(issues.authorId, locals.user?.id)))[0]
+    // const projectsContributed = (await db
+    //     .selectDistinct({
+    //         count: count(issues.projectId)
+    //     })
+    //     .from(issues)
+    //     .where(eq(issues.authorId, locals.user?.id)))[0]
 
     const totalLinesOfCode = (await db
         .select({
@@ -35,6 +35,6 @@ export const load: PageServerLoad = async ({ locals }) => {
         .where(eq(issues.authorId, locals.user?.id)))[0]
 
 
-    return { totalContributions, projectsContributed, totalLinesOfCode, closedIssues }
+    return { totalContributions, totalLinesOfCode, closedIssues, }
 
 };
